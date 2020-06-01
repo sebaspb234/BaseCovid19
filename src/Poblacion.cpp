@@ -3,6 +3,15 @@
 #include <string.h>
 using namespace std;
 
+Poblacion::Poblacion(string miNombre,string miApellido,string miDistrito,string _sintoma,string _antecedente,string miEdad)
+{
+    nombrePaciente=miNombre;
+    apellidoPaciente=miApellido;
+    distrito=miDistrito;
+    sintoma=_sintoma;
+    antecedente=_antecedente;
+    edad=miEdad;
+}
 
 void Poblacion::setNombre(string miNombre)
 {
@@ -26,15 +35,22 @@ string Poblacion::getApellido()
 
 string Poblacion::Registro()
 {
-    cout<<"같같Ingresa tu informacion같같"<<endl;
+    cout<<"째째째째Ingresa tu informacion째째째째"<<endl;
     cout<<"Ingresa el nombre del paciente: ";getline(cin,nombrePaciente);
     cout<<"Ingresa el apellido del paciente: ";getline(cin,apellidoPaciente);
     cout<<"Ingresa el distrito del paciente: ";getline(cin,distrito);
-    cout<<"Ingresa la edad del paciente: ";cin>>edad;
+    cout<<"Ingresa la edad del paciente: ";getline(cin,edad);
     setNombre(nombrePaciente);setApellido(apellidoPaciente);setEdad(edad);setDistrito(distrito);
-    cout<<"Los datos del paciente son: "<<getNombre()<<" "<<getApellido()<<" "<<getEdad()<<" "<<getDistrito();
 }
 
+string Poblacion::mostrarDatos()
+{
+    cout<<"DATOS DEL PACIENTE: \n";
+    cout<<"Nombre: "<<getNombre()<<endl;
+    cout<<"Apellido: "<<getApellido()<<endl;
+    cout<<"Edad: "<<getEdad()<<endl;
+    cout<<"Distrito: "<<getDistrito()<<endl;
+}
 string Poblacion::Sintomas()
 {
     cout<<"Ingresa los sintomas que presenta el paciente: ";getline(cin,sintoma);
@@ -54,12 +70,12 @@ void Poblacion::setSintomas(string _sintoma)
     sintoma=_sintoma;
 }
 
-void Poblacion::setEdad(int miEdad)
+void Poblacion::setEdad(string miEdad)
 {
     edad=miEdad;
 }
 
-int Poblacion::getEdad()
+string Poblacion::getEdad()
 {
     return edad;
 }
