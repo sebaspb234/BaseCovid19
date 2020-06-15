@@ -3,7 +3,7 @@
 #include <string.h>
 using namespace std;
 
-Poblacion::Poblacion(string miNombre,string miApellido,string miDistrito,string _sintoma,string _antecedente,string miEdad)
+Poblacion::Poblacion(string miNombre,string miApellido,string miDistrito,string _sintoma,string _antecedente,int miEdad)
 {
     nombrePaciente=miNombre;
     apellidoPaciente=miApellido;
@@ -38,8 +38,8 @@ string Poblacion::Registro()
     cout<<"°°°°Ingresa tu informacion°°°°"<<endl;
     cout<<"Ingresa el nombre del paciente: ";getline(cin,nombrePaciente);
     cout<<"Ingresa el apellido del paciente: ";getline(cin,apellidoPaciente);
+    cout<<"Ingresa la edad del paciente: ";cin>>edad; cin.ignore();
     cout<<"Ingresa el distrito del paciente: ";getline(cin,distrito);
-    cout<<"Ingresa la edad del paciente: ";getline(cin,edad);
     setNombre(nombrePaciente);setApellido(apellidoPaciente);setEdad(edad);setDistrito(distrito);
 }
 
@@ -62,7 +62,7 @@ string Poblacion::AntecedentesMedicos()
 {
     cout<<"Ingresa los antecedentes medicos del paciente: ";getline(cin,antecedente);
     setAntecedentes(antecedente);
-    cout<<"Los antecedentes medicos del paciente son: "<<getAntecedente();
+    cout<<"Los antecedentes medicos del paciente son: "<<getAntecedente()<<endl;
 }
 
 void Poblacion::setSintomas(string _sintoma)
@@ -70,12 +70,12 @@ void Poblacion::setSintomas(string _sintoma)
     sintoma=_sintoma;
 }
 
-void Poblacion::setEdad(string miEdad)
+void Poblacion::setEdad(int miEdad)
 {
     edad=miEdad;
 }
 
-string Poblacion::getEdad()
+int Poblacion::getEdad()
 {
     return edad;
 }
