@@ -4,6 +4,8 @@
 #include <vector>
 #include <iostream>
 #include <string.h>
+#include <stdlib.h>
+#include <fstream>
 using namespace std;
 
 class NoVulnerable:public Poblacion
@@ -13,7 +15,7 @@ class NoVulnerable:public Poblacion
         string ocupacion;
         string celular;
     public:
-      //  NoVulnerable();
+        NoVulnerable();
         void setFamilia(string);
         void setOcupacion(string);
         void setCelular(string);
@@ -22,8 +24,7 @@ class NoVulnerable:public Poblacion
         string getCelular();
         string Registro();
         string mostrarDatos();
-        string mostrarVector();
-        vector<string>lista={getFamilia(),getOcupacion(),getCelular()};
+        vector<string>lista={familia,ocupacion,celular};
 };
 
 #endif // NOVULNERABLE_H
