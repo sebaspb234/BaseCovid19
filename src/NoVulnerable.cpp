@@ -4,12 +4,12 @@
 #include <vector>
 using namespace std;
 
-/*NoVulnerable::NoVulnerable()
+NoVulnerable::NoVulnerable()
 {
     familia="";
     ocupacion="";
     celular="";
-}*/
+}
 
 void NoVulnerable::setFamilia(string _familia)
 {
@@ -56,15 +56,7 @@ string NoVulnerable::mostrarDatos()
     cout<<"Integrantes de la familia: "<<getFamilia()<<endl;
     cout<<"Ocupacion del paciente: "<<getOcupacion()<<endl;
     cout<<"Numero de telefono del paciente: "<<getCelular()<<endl;
-
-}
-
-string NoVulnerable::mostrarVector()
-{
-    for(int i=0;i<3;i++)
-    {
-        cout<<lista[i];
-    }
+    cout<<familia;
 }
 
 
